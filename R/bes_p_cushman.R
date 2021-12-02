@@ -20,8 +20,8 @@
 #' point_pattern = rast(system.file("raster/point_pattern.tif", package = "bespatial"))
 #' ce3 = bes_p_cushman(point_pattern, 100)
 #' plot(point_pattern, main = round(ce3$value, 2))
-#' ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)
-#' plot(point_pattern, main = round(ce3b$value, 2))
+#' #ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)
+#' #plot(point_pattern, main = round(ce3b$value, 2))
 bes_p_cushman = function(x, nr_of_permutations, independent = FALSE){
   if (!inherits(x, "SpatRaster")){
     x = to_terra(x)

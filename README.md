@@ -8,16 +8,14 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Codecov test
-coverage](https://codecov.io/gh/Nowosad/bespatial/branch/master/graph/badge.svg)](https://codecov.io/gh/Nowosad/bespatial?branch=master)
+coverage](https://codecov.io/gh/Nowosad/bespatial/branch/master/graph/badge.svg)](https://app.codecov.io/gh/Nowosad/bespatial?branch=master)
 <!-- badges: end -->
 
 The goal of **bespatial** is to calculate sevaral entropy metrics for
 spatial data inspired by Boltzmann’s entropy formula. It includes
-metrics introduced by Cushman for landscape mosaics (Cushman (2015)
-<doi:10.1007/s10980-015-0305-2>, and landscape gradients and point
-patterns (Cushman (2021) <doi:10.3390/e23121616>); by Gao et al. for
-landscape gradients (<doi:10.1111/tgis.12315>;
-<doi:10.1007/s10980-019-00854-3>).
+metrics introduced by Cushman for landscape mosaics (Cushman (2015)),
+and landscape gradients and point patterns (Cushman (2021)); by Gao et
+al. for landscape gradients (2017, 2019).
 
 ## Installation
 
@@ -47,7 +45,7 @@ plot(mosaic, main = round(ce1$value, 2))
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
-## Documentation
+<!-- ## Documentation -->
 
 ## References
 
