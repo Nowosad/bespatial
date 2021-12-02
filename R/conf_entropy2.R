@@ -1,0 +1,38 @@
+#' Configurational entropy for surfaces
+#'
+#' @param x SpatRaster object ([terra::rast()]) containing one or more continuous rasters
+#' @param nr_of_permutations  Number of permutations performed on each input raster to calculate
+#'   possible distribution of "slope" values
+#' @param independent Should an independent set of permutations be performed for each input raster?
+#'   `TRUE`/`FALSE`.
+#'   Use `FALSE` (default) when each of your input rasters has the same configuration.
+#'
+#' @return A tibble
+#' @export
+#'
+#' @examples
+#' library(terra)
+#' library(bespatial)
+#' surface = rast(system.file("raster/surface.tif", package = "bespatial"))
+#' ce2 = conf_entropy2(surface, 1000)
+#' plot(ce2$slope, ce2$lnp)
+#' conf_entropy2(surface, 1000, independent = TRUE)
+conf_entropy2 = function(x, nr_of_permutations, independent = FALSE){
+  if (independent){
+    result = lapply(terra::as.list(x), conf_entropy2,
+                    nr_of_permutations, independent = FALSE)
+    result = do.call(rbind, result)
+  } else {
+    p = permute_raster(x[[1]], nr_of_permutations)
+    p_slope = vapply(p, get_slope, FUN.VALUE = numeric(1))
+    mean_slope = mean(p_slope)
+    sd_slope = stats::sd(p_slope)
+    x_slope = apply(terra::as.array(x), 3, get_slope)
+    lnp_slope = stats::dnorm(x_slope, mean = mean_slope, sd = sd_slope, log = TRUE)
+    result = tibble::tibble(layer = seq_along(lnp_slope),
+                            metric = "configurational_entropy", type = "surface",
+                            mean_slope = mean_slope, sd_slope = sd_slope,
+                            lnp = lnp_slope, slope = x_slope)
+  }
+  return(result)
+}
