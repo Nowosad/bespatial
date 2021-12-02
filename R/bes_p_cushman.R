@@ -14,13 +14,13 @@
 #' library(terra)
 #' library(bespatial)
 #' point_pattern = rast(system.file("raster/point_pattern.tif", package = "bespatial"))
-#' ce3 = conf_entropy3(point_pattern, 100)
-#' plot(ce3$distance, ce3$lnp)
-#' ce3b = conf_entropy3(point_pattern, 100, independent = TRUE)
-#' plot(ce3b$distance, ce3b$lnp)
-conf_entropy3 = function(x, nr_of_permutations, independent = FALSE){
+#' ce3 = bes_p_cushman(point_pattern, 100)
+#' plot(point_pattern, main = round(ce3$value, 2))
+#' ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)
+#' plot(point_pattern, main = round(ce3b$value, 2))
+bes_p_cushman = function(x, nr_of_permutations, independent = FALSE){
   if (independent){
-    result = lapply(terra::as.list(x), conf_entropy3,
+    result = lapply(terra::as.list(x), bes_p_cushman,
                     nr_of_permutations, independent = FALSE)
     result = do.call(rbind, result)
   } else {
@@ -31,9 +31,9 @@ conf_entropy3 = function(x, nr_of_permutations, independent = FALSE){
     x_dist = apply(terra::as.array(x), 3, get_distance, x)
     lnp_dist = stats::dnorm(x_dist, mean = mean_dist, sd = sd_dist, log = TRUE)
     result = tibble::tibble(layer = seq_along(lnp_dist),
-                            metric = "configurational_entropy", type = "point_pattern",
-                            mean_distance = mean_dist, sd_distance = sd_dist,
-                            lnp = lnp_dist, distance = x_dist)
+                            type = "point_pattern",
+                            metric = "cushman", 
+                            value = lnp_dist)
   }
   return(result)
 }

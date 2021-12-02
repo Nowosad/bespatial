@@ -13,13 +13,13 @@
 #' @examples
 #' library(terra)
 #' library(bespatial)
-#' surface = rast(system.file("raster/surface.tif", package = "bespatial"))
-#' ce2 = conf_entropy2(surface, 1000)
-#' plot(ce2$slope, ce2$lnp)
-#' conf_entropy2(surface, 1000, independent = TRUE)
-conf_entropy2 = function(x, nr_of_permutations, independent = FALSE){
+#' gradient = rast(system.file("raster/gradient.tif", package = "bespatial"))
+#' ce2 = bes_g_cushman(gradient, 1000)
+#' plot(gradient, main = round(ce2$value, 2))
+#' bes_g_cushman(gradient, 1000, independent = TRUE)
+bes_g_cushman = function(x, nr_of_permutations, independent = FALSE){
   if (independent){
-    result = lapply(terra::as.list(x), conf_entropy2,
+    result = lapply(terra::as.list(x), bes_g_cushman,
                     nr_of_permutations, independent = FALSE)
     result = do.call(rbind, result)
   } else {
@@ -30,9 +30,9 @@ conf_entropy2 = function(x, nr_of_permutations, independent = FALSE){
     x_slope = apply(terra::as.array(x), 3, get_slope)
     lnp_slope = stats::dnorm(x_slope, mean = mean_slope, sd = sd_slope, log = TRUE)
     result = tibble::tibble(layer = seq_along(lnp_slope),
-                            metric = "configurational_entropy", type = "surface",
-                            mean_slope = mean_slope, sd_slope = sd_slope,
-                            lnp = lnp_slope, slope = x_slope)
+                            type = "gradient",
+                            metric = "cushman",
+                            value = lnp_slope)
   }
   return(result)
 }

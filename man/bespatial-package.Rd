@@ -4,9 +4,9 @@
 \name{bespatial-package}
 \alias{bespatial}
 \alias{bespatial-package}
-\title{bespatial: What the Package Does (One Line, Title Case)}
+\title{bespatial: Boltzmann Entropy for Spatial Data}
 \description{
-What the package does (one paragraph).
+Calculates sevaral entropy metrics for spatial data inspired by Boltzmann's entropy formula. It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015) <doi:10.1007/s10980-015-0305-2>, and landscape gradients and point patterns (Cushman (2021) <doi:10.3390/e23121616>).
 }
 \author{
 \strong{Maintainer}: Jakub Nowosad \email{nowosad.jakub@gmail.com} (\href{https://orcid.org/0000-0002-1057-3721}{ORCID})

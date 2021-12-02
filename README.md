@@ -11,7 +11,11 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 coverage](https://codecov.io/gh/Nowosad/bespatial/branch/master/graph/badge.svg)](https://codecov.io/gh/Nowosad/bespatial?branch=master)
 <!-- badges: end -->
 
-The goal of bespatial is to …
+The goal of **bespatial** is to calculate sevaral entropy metrics for
+spatial data inspired by Boltzmann’s entropy formula. It includes
+metrics introduced by Cushman for landscape mosaics (Cushman (2015)
+<doi:10.1007/s10980-015-0305-2>, and landscape gradients and point
+patterns (Cushman (2021) <doi:10.3390/e23121616>).
 
 ## Installation
 
@@ -24,11 +28,11 @@ You can install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("Nowosad/bespatial")
+# install.packages("remotes")
+remotes::install_github("Nowosad/bespatial")
 ```
 
-## Example
+## Examples
 
 ## Documentation
 
@@ -42,6 +46,10 @@ Springer Science and Business Media LLC.
 Cushman, S. (2018). Calculation of Configurational Entropy in Complex
 Landscapes. In Entropy (Vol. 20, Issue 4, p. 298). MDPI AG.
 <https://doi.org/10.3390/e20040298>
+
+Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to
+Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23,
+Issue 12, p. 1616). MDPI AG. <https://doi.org/10.3390/e23121616>
 
 ## Contribution
 

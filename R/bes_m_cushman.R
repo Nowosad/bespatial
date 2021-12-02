@@ -14,12 +14,12 @@
 #' library(terra)
 #' library(bespatial)
 #' mosaic = rast(system.file("raster/mosaic.tif", package = "bespatial"))
-#' ce1 = conf_entropy1(mosaic, 1000)
-#' plot(ce1$total_edge, ce1$lnp)
-#' conf_entropy1(mosaic, 1000, independent = TRUE)
-conf_entropy1 = function(x, nr_of_permutations, independent = FALSE){
+#' ce1 = bes_m_cushman(mosaic, 1000)
+#' plot(mosaic, main = round(ce1$value, 2))
+#' bes_m_cushman(mosaic, 1000, independent = TRUE)
+bes_m_cushman = function(x, nr_of_permutations, independent = FALSE){
   if (independent){
-    result = lapply(terra::as.list(x), conf_entropy1,
+    result = lapply(terra::as.list(x), bes_m_cushman,
                     nr_of_permutations, independent = FALSE)
     result = do.call(rbind, result)
   } else {
@@ -29,10 +29,10 @@ conf_entropy1 = function(x, nr_of_permutations, independent = FALSE){
     sd_te = stats::sd(p_te)
     x_te = apply(terra::as.array(x), 3, get_total_edge, resolution = terra::res(x))
     lnp_te = stats::dnorm(x_te, mean = mean_te, sd = sd_te, log = TRUE)
-    result = tibble::tibble(layer = seq_along(lnp_te),
-                            metric = "configurational_entropy", type = "mosaic",
-                            mean_total_edge = mean_te, sd_total_edge = sd_te,
-                            lnp = lnp_te, total_edge = x_te)
+    result = tibble::tibble(layer = seq_along(lnp_te), 
+                            type = "mosaic",
+                            metric = "cushman",
+                            value = lnp_te)
   }
   return(result)
 }
