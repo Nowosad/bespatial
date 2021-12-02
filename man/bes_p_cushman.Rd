@@ -7,7 +7,7 @@
 bes_p_cushman(x, nr_of_permutations, independent = FALSE)
 }
 \arguments{
-\item{x}{SpatRaster object (\code{\link[terra:rast]{terra::rast()}}) containing one or more rasters with one value and NAs}
+\item{x}{SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more rasters with one value and NAs}
 
 \item{nr_of_permutations}{Number of permutations performed on each input raster to calculate
 possible distribution of the number of nearest neighbors}
@@ -20,7 +20,7 @@ Use \code{FALSE} (default) when each of your input rasters has the same configur
 A tibble
 }
 \description{
-Configurational entropy for point patterns
+Calculates Cushman's configurational entropy for point patterns (2021)
 }
 \examples{
 library(terra)

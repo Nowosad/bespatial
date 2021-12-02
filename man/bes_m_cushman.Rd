@@ -7,20 +7,20 @@
 bes_m_cushman(x, nr_of_permutations, independent = FALSE)
 }
 \arguments{
-\item{x}{SpatRaster object (\code{\link[terra:rast]{terra::rast()}}) containing one or more categorical rasters}
+\item{x}{SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more categorical rasters}
 
 \item{nr_of_permutations}{Number of permutations performed on each input raster to calculate
 possible distribution of total edge values}
 
 \item{independent}{Should an independent set of permutations be performed for each input raster?
 \code{TRUE}/\code{FALSE}.
-Use \code{FALSE} (default) when each of your input rasters has the same configuration.}
+Use \code{FALSE} (default) when each of your input rasters has the same configuration (proportion of categories).}
 }
 \value{
 A tibble
 }
 \description{
-Configurational entropy for landscape mosaics
+Calculates Cushman's configurational entropy for landscape mosaics (2015)
 }
 \examples{
 library(terra)

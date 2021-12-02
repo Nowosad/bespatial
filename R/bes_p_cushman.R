@@ -1,6 +1,8 @@
 #' Configurational entropy for point patterns
+#' 
+#' Calculates Cushman's configurational entropy for point patterns (2021)
 #'
-#' @param x SpatRaster object ([terra::rast()]) containing one or more rasters with one value and NAs
+#' @param x SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more rasters with one value and NAs
 #' @param nr_of_permutations Number of permutations performed on each input raster to calculate
 #'   possible distribution of the number of nearest neighbors
 #' @param independent Should an independent set of permutations be performed for each input raster?
@@ -21,6 +23,9 @@
 #' ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)
 #' plot(point_pattern, main = round(ce3b$value, 2))
 bes_p_cushman = function(x, nr_of_permutations, independent = FALSE){
+  if (!inherits(x, "SpatRaster")){
+    x = to_terra(x)
+  }
   if (independent){
     result = lapply(terra::as.list(x), bes_p_cushman,
                     nr_of_permutations, independent = FALSE)

@@ -1,6 +1,6 @@
 #' Boltzmann entropy of a landscape gradient
 #'
-#' Calculates the Boltzmann entropy of a landscape gradient
+#' Calculates the Boltzmann entropy of a landscape gradient by Gao (2017, 2019)
 #'
 #' @param x SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array.
 #' @param base A logarithm base ("log", "log2" or "log10").
@@ -43,6 +43,9 @@ bes_g_gao = function(x,
                          na_adjust = TRUE,
                          base = "log10",
                          relative = FALSE){
+  if (!inherits(x, "SpatRaster")){
+    x = to_terra(x)
+  }
   value = belg::get_boltzmann(x = x, method = method, na_adjust = na_adjust,
                         base = base, relative = relative)
   result = tibble::tibble(layer = seq_along(value),

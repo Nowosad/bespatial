@@ -1,6 +1,8 @@
 #' Configurational entropy for surfaces
+#' 
+#' Calculates Cushman's configurational entropy for surfaces (2021)
 #'
-#' @param x SpatRaster object ([terra::rast()]) containing one or more continuous rasters
+#' @param x SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more continuous rasters
 #' @param nr_of_permutations  Number of permutations performed on each input raster to calculate
 #'   possible distribution of "slope" values
 #' @param independent Should an independent set of permutations be performed for each input raster?
@@ -20,6 +22,9 @@
 #' plot(gradient, main = round(ce2$value, 2))
 #' bes_g_cushman(gradient, 1000, independent = TRUE)
 bes_g_cushman = function(x, nr_of_permutations, independent = FALSE){
+  if (!inherits(x, "SpatRaster")){
+    x = to_terra(x)
+  }
   if (independent){
     result = lapply(terra::as.list(x), bes_g_cushman,
                     nr_of_permutations, independent = FALSE)

@@ -1,11 +1,13 @@
 #' Configurational entropy for landscape mosaics
+#' 
+#' Calculates Cushman's configurational entropy for landscape mosaics (2015)
 #'
-#' @param x SpatRaster object ([terra::rast()]) containing one or more categorical rasters
+#' @param x SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more categorical rasters
 #' @param nr_of_permutations Number of permutations performed on each input raster to calculate
 #'   possible distribution of total edge values
 #' @param independent Should an independent set of permutations be performed for each input raster?
 #'   `TRUE`/`FALSE`.
-#'   Use `FALSE` (default) when each of your input rasters has the same configuration.
+#'   Use `FALSE` (default) when each of your input rasters has the same configuration (proportion of categories).
 #'
 #' @return A tibble
 #' @export
@@ -19,6 +21,9 @@
 #' plot(mosaic, main = round(ce1$value, 2))
 #' bes_m_cushman(mosaic, 1000, independent = TRUE)
 bes_m_cushman = function(x, nr_of_permutations, independent = FALSE){
+  if (!inherits(x, "SpatRaster")){
+    x = to_terra(x)
+  }
   if (independent){
     result = lapply(terra::as.list(x), bes_m_cushman,
                     nr_of_permutations, independent = FALSE)

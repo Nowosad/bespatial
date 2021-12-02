@@ -7,7 +7,7 @@
 bes_g_cushman(x, nr_of_permutations, independent = FALSE)
 }
 \arguments{
-\item{x}{SpatRaster object (\code{\link[terra:rast]{terra::rast()}}) containing one or more continuous rasters}
+\item{x}{SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more continuous rasters}
 
 \item{nr_of_permutations}{Number of permutations performed on each input raster to calculate
 possible distribution of "slope" values}
@@ -20,7 +20,7 @@ Use \code{FALSE} (default) when each of your input rasters has the same configur
 A tibble
 }
 \description{
-Configurational entropy for surfaces
+Calculates Cushman's configurational entropy for surfaces (2021)
 }
 \examples{
 library(terra)

@@ -29,7 +29,7 @@ for the aggregation-based method (Gao et al., 2019).}
 A tibble
 }
 \description{
-Calculates the Boltzmann entropy of a landscape gradient
+Calculates the Boltzmann entropy of a landscape gradient by Gao (2017, 2019)
 }
 \details{
 The method for computing the Boltzmann entropy of a landscape
