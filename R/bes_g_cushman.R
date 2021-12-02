@@ -9,6 +9,8 @@
 #'
 #' @return A tibble
 #' @export
+#' 
+#' @references Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23, Issue 12, p. 1616). MDPI AG. https://doi.org/10.3390/e23121616 
 #'
 #' @examples
 #' library(terra)

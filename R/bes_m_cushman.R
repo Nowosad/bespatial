@@ -10,6 +10,7 @@
 #' @return A tibble
 #' @export
 #'
+#' @references Cushman, S. A. (2015). Calculating the configurational entropy of a landscape mosaic. In Landscape Ecology (Vol. 31, Issue 3, pp. 481–489). Springer Science and Business Media LLC. https://doi.org/10.1007/s10980-015-0305-2 
 #' @examples
 #' library(terra)
 #' library(bespatial)
