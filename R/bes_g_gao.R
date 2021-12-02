@@ -43,7 +43,7 @@ bes_g_gao = function(x,
                          na_adjust = TRUE,
                          base = "log10",
                          relative = FALSE){
-  value = get_boltzmann(x = x, method = method, na_adjust = na_adjust,
+  value = belg::get_boltzmann(x = x, method = method, na_adjust = na_adjust,
                         base = base, relative = relative)
   result = tibble::tibble(layer = seq_along(value),
                           type = "gradient",

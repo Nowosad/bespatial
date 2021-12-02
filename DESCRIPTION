@@ -9,7 +9,7 @@ Authors@R: c(
 Description: Calculates sevaral entropy metrics for spatial data 
   inspired by Boltzmann's entropy formula.
   It includes metrics introduced by Cushman for landscape mosaics 
-  (Cushman (2015) <doi:10.1007/s10980-015-0305-2>, 
+  (Cushman (2015) <doi:10.1007/s10980-015-0305-2>), 
   and landscape gradients and point patterns
   (Cushman (2021) <doi:10.3390/e23121616>); by Gao et al. for landscape gradients
   (<doi:10.1111/tgis.12315>; <doi:10.1007/s10980-019-00854-3>).

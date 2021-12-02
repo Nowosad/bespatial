@@ -30,3 +30,6 @@ ce1 = bes_m_cushman(mosaic, 1000)
 plot(mosaic, main = round(ce1$value, 2))
 bes_m_cushman(mosaic, 1000, independent = TRUE)
 }
+\references{
+Cushman, S. A. (2015). Calculating the configurational entropy of a landscape mosaic. In Landscape Ecology (Vol. 31, Issue 3, pp. 481–489). Springer Science and Business Media LLC. https://doi.org/10.1007/s10980-015-0305-2
+}

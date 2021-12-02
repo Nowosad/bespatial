@@ -42,7 +42,7 @@ positive values.
 library(terra)
 library(bespatial)
 gradient = rast(system.file("raster/gradient.tif", package = "bespatial"))
-gg1 = bes_g_gao(gradient, 1000)
+gg1 = bes_g_gao(gradient)
 plot(gradient, main = round(gg1$value, 2))
 }
 \references{

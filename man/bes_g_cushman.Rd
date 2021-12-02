@@ -30,3 +30,6 @@ ce2 = bes_g_cushman(gradient, 1000)
 plot(gradient, main = round(ce2$value, 2))
 bes_g_cushman(gradient, 1000, independent = TRUE)
 }
+\references{
+Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23, Issue 12, p. 1616). MDPI AG. https://doi.org/10.3390/e23121616
+}
