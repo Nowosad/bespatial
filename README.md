@@ -11,10 +11,10 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 coverage](https://codecov.io/gh/Nowosad/bespatial/branch/master/graph/badge.svg)](https://app.codecov.io/gh/Nowosad/bespatial?branch=master)
 <!-- badges: end -->
 
-The goal of **bespatial** is to calculate sevaral entropy metrics for
+The goal of **bespatial** is to calculate several entropy metrics for
 spatial data inspired by Boltzmann’s entropy formula. It includes
 metrics introduced by Cushman for landscape mosaics (Cushman (2015)),
-and landscape gradients and point patterns (Cushman (2021)); by Gao et
+landscape gradients and point patterns (Cushman (2021)); by Gao et
 al. for landscape gradients (2017, 2019).
 
 ## Installation
