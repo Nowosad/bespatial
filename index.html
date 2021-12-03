@@ -93,6 +93,10 @@
 <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mosaic</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce1</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
 <p>The above results show that the less random the configuration is, the smaller Cushman’s configurational entropy value is.</p>
+</div>
+<div class="section level2">
+<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
 <p>Each function in this package has a similar name:</p>
 <ul>
 <li>it starts with <code>bes_</code>
@@ -101,6 +105,34 @@
 <li>it ends with the name of the author of the metric, for example, <code>cushman</code> or <code>gao</code>
 </li>
 </ul>
+<table class="table">
+<colgroup>
+<col width="20%">
+<col width="79%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>bes_m_cushman</code></td>
+<td align="left">Cushman’s configurational entropy for landscape mosaics (2015)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>bes_g_cushman</code></td>
+<td align="left">Cushman’s configurational entropy for surfaces (2021)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>bes_g_gao</code></td>
+<td align="left">Boltzmann entropy of a landscape gradient by Gao (2017, 2019)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>bes_p_cushman</code></td>
+<td align="left">Cushman’s configurational entropy for point patterns (2021)</td>
+</tr>
+</tbody>
+</table>
 <!-- ## Documentation -->
 </div>
 <div class="section level2">
@@ -169,7 +201,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>

@@ -43,7 +43,9 @@
     <p>Calculates Cushman's configurational entropy for surfaces (2021)</p>
     </div>
 
-    <div id="ref-usage">Usage,<div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">bes_g_cushman</span><span class="op">(</span><span class="va">x</span>, <span class="va">nr_of_permutations</span>, independent <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div></div>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">bes_g_cushman</span><span class="op">(</span><span class="va">x</span>, <span class="va">nr_of_permutations</span>, independent <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
@@ -79,17 +81,17 @@ Use <code>FALSE</code> (default) when each of your input rasters has the same co
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 11 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    layer type     metric      value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 gradient cushman     0.446</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     1 gradient cushman   -<span style="color: #BB0000;">29.4</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     1 gradient cushman  -<span style="color: #BB0000;">109.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     1 gradient cushman  -<span style="color: #BB0000;">242.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     1 gradient cushman  -<span style="color: #BB0000;">352.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     1 gradient cushman  -<span style="color: #BB0000;">507.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     1 gradient cushman  -<span style="color: #BB0000;">728.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     1 gradient cushman  -<span style="color: #BB0000;">841.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     1 gradient cushman -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">014.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     1 gradient cushman -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">074.</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     1 gradient cushman -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">383.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 gradient cushman     0.429</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     1 gradient cushman   -<span style="color: #BB0000;">31.3</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     1 gradient cushman  -<span style="color: #BB0000;">108.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     1 gradient cushman  -<span style="color: #BB0000;">230.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     1 gradient cushman  -<span style="color: #BB0000;">386.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     1 gradient cushman  -<span style="color: #BB0000;">527.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     1 gradient cushman  -<span style="color: #BB0000;">716.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     1 gradient cushman  -<span style="color: #BB0000;">852.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     1 gradient cushman -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">005.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     1 gradient cushman -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">189.</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     1 gradient cushman -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">257.</span>   </span>
 </code></pre></div>
     </div>
   </div>
@@ -104,7 +106,7 @@ Use <code>FALSE</code> (default) when each of your input rasters has the same co
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer></div>
