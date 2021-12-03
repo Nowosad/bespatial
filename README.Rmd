@@ -68,7 +68,7 @@ Each function in this package has a similar name:
 - it ends with the name of the author of the metric, for example, `cushman` or `gao`
 
 ```{r, echo=FALSE}
-fun = c("`bes_m_cushman`", "`bes_g_cushman`", "`bes_g_gao`", "`bes_p_cushman`")
+fun = c("`bes_m_cushman()`", "`bes_g_cushman()`", "`bes_g_gao()`", "`bes_p_cushman()`")
 desc = c("Cushman's configurational entropy for landscape mosaics (2015)",
          "Cushman's configurational entropy for surfaces (2021)",
          "Boltzmann entropy of a landscape gradient by Gao (2017, 2019)", 
