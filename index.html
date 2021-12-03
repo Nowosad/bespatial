@@ -82,14 +82,25 @@
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
+<p>Let’s start by attaching relevant packages and reading example data <code>mosaic</code>. This dataset contains 12 raster layers, where each has the equal number of cells with values 1 and 2 (identical compositions), but they are differently arranged in space (different configurations).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span>
-<span class="co">#&gt; terra version 1.5.0</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">bespatial</span><span class="op">)</span>
-<span class="va">mosaic</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"raster/mosaic.tif"</span>, package <span class="op">=</span> <span class="st">"bespatial"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">ce1</span> <span class="op">=</span> <span class="fu"><a href="reference/bes_m_cushman.html">bes_m_cushman</a></span><span class="op">(</span><span class="va">mosaic</span>, <span class="fl">1000</span><span class="op">)</span>
+<span class="va">mosaic</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"raster/mosaic.tif"</span>, package <span class="op">=</span> <span class="st">"bespatial"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Now, we can calculate a selected metric, for example, Cushman’s configurational entropy for landscape mosaics with <code><a href="reference/bes_m_cushman.html">bes_m_cushman()</a></code>:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ce1</span> <span class="op">=</span> <span class="fu"><a href="reference/bes_m_cushman.html">bes_m_cushman</a></span><span class="op">(</span><span class="va">mosaic</span>, nr_of_permutations <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mosaic</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce1</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
+<p>The above results show that the less random the configuration is, the smaller Cushman’s configurational entropy value is.</p>
+<p>Each function in this package has a similar name:</p>
+<ul>
+<li>it starts with <code>bes_</code>
+</li>
+<li>next, it is either <code>m_</code> for mosaics (categorical rasters), <code>g_</code> for gradients (<code>g_</code>) (continuous rasters), or <code>p_</code> for point patterns (rasters with one value and NAs)</li>
+<li>it ends with the name of the author of the metric, for example, <code>cushman</code> or <code>gao</code>
+</li>
+</ul>
 <!-- ## Documentation -->
 </div>
 <div class="section level2">
