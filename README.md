@@ -34,16 +34,38 @@ remotes::install_github("Nowosad/bespatial")
 
 ## Example
 
+Let’s start by attaching relevant packages and reading example data
+`mosaic`. This dataset contains 12 raster layers, where each has the
+equal number of cells with values 1 and 2 (identical compositions), but
+they are differently arranged in space (different configurations).
+
 ``` r
 library(terra)
-#> terra version 1.5.0
 library(bespatial)
 mosaic = rast(system.file("raster/mosaic.tif", package = "bespatial"))
-ce1 = bes_m_cushman(mosaic, 1000)
+```
+
+Now, we can calculate a selected metric, for example, Cushman’s
+configurational entropy for landscape mosaics with `bes_m_cushman()`:
+
+``` r
+ce1 = bes_m_cushman(mosaic, nr_of_permutations = 1000)
 plot(mosaic, main = round(ce1$value, 2))
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+The above results show that the less random the configuration is, the
+smaller Cushman’s configurational entropy value is.
+
+Each function in this package has a similar name:
+
+-   it starts with `bes_`
+-   next, it is either `m_` for mosaics (categorical rasters), `g_` for
+    gradients (`g_`) (continuous rasters), or `p_` for point patterns
+    (rasters with one value and NAs)
+-   it ends with the name of the author of the metric, for example,
+    `cushman` or `gao`
 
 <!-- ## Documentation -->
 
