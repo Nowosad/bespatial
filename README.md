@@ -58,6 +58,8 @@ plot(mosaic, main = round(ce1$value, 2))
 The above results show that the less random the configuration is, the
 smaller Cushman’s configurational entropy value is.
 
+## Functions
+
 Each function in this package has a similar name:
 
 -   it starts with `bes_`
@@ -66,6 +68,13 @@ Each function in this package has a similar name:
     (rasters with one value and NAs)
 -   it ends with the name of the author of the metric, for example,
     `cushman` or `gao`
+
+| Function        | Description                                                    |
+|:----------------|:---------------------------------------------------------------|
+| `bes_m_cushman` | Cushman’s configurational entropy for landscape mosaics (2015) |
+| `bes_g_cushman` | Cushman’s configurational entropy for surfaces (2021)          |
+| `bes_g_gao`     | Boltzmann entropy of a landscape gradient by Gao (2017, 2019)  |
+| `bes_p_cushman` | Cushman’s configurational entropy for point patterns (2021)    |
 
 <!-- ## Documentation -->
 
