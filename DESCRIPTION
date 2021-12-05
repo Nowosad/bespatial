@@ -6,7 +6,7 @@ Authors@R: c(
     role = c("aut", "cre"),
     email = "nowosad.jakub@gmail.com", 
     comment = c(ORCID = "0000-0002-1057-3721")))
-Description: Calculates sevaral entropy metrics for spatial data 
+Description: Calculates several entropy metrics for spatial data 
   inspired by Boltzmann's entropy formula.
   It includes metrics introduced by Cushman for landscape mosaics 
   (Cushman (2015) <doi:10.1007/s10980-015-0305-2>), 

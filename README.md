@@ -35,7 +35,7 @@ remotes::install_github("Nowosad/bespatial")
 ## Example
 
 Let’s start by attaching relevant packages and reading example data
-`mosaic`. This dataset contains 12 raster layers, where each has the
+`mosaic`. This dataset contains 12 raster layers, where each has an
 equal number of cells with values 1 and 2 (identical compositions), but
 they are differently arranged in space (different configurations).
 
