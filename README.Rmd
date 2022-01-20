@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
   <!-- badges: end -->
 
 The goal of **bespatial** is to calculate several entropy metrics for spatial data inspired by Boltzmann's entropy formula.
-It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015)), landscape gradients and point patterns (Cushman (2021)); by Gao et al. for landscape gradients (2017, 2019).
+It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015)), landscape gradients and point patterns (Cushman (2021)); by Zhao and Zhang for  andscape mosaics (2019); and by Gao et al. for landscape gradients (2017, 2019).
 
 ## Installation
 
@@ -65,11 +65,12 @@ Each function in this package has a similar name:
 
 - it starts with `bes_`
 - next, it is either `m_` for mosaics (categorical rasters), `g_` for gradients (`g_`) (continuous rasters), or `p_` for point patterns (rasters with one value and NAs)
-- it ends with the name of the author of the metric, for example, `cushman` or `gao`
+- it ends with the name of the main author of the metric, for example, `cushman`, `zhao`, or `gao`
 
 ```{r, echo=FALSE}
-fun = c("`bes_m_cushman()`", "`bes_g_cushman()`", "`bes_g_gao()`", "`bes_p_cushman()`")
+fun = c("`bes_m_cushman()`", "`bes_m_zhao()`", "`bes_g_cushman()`", "`bes_g_gao()`", "`bes_p_cushman()`")
 desc = c("Cushman's configurational entropy for landscape mosaics (2015)",
+         "Zhao's configurational entropy for landscape mosaics based on the Wasserstein metric (2019)",
          "Cushman's configurational entropy for surfaces (2021)",
          "Boltzmann entropy of a landscape gradient by Gao (2017, 2019)", 
          "Cushman's configurational entropy for point patterns (2021)")
@@ -87,6 +88,7 @@ knitr::kable(df)
 - Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23, Issue 12, p. 1616). MDPI AG. https://doi.org/10.3390/e23121616 
 - Gao, Peichao, Hong Zhang, and Zhilin Li. "A hierarchy-based solution to calculate the configurational entropy of landscape gradients." Landscape Ecology 32(6) (2017): 1133-1146.
 - Gao, Peichao and Zhilin Li. "Aggregation-based method for computing absolute Boltzmann entropy of landscape gradient with full thermodynamic consistency." Landscape Ecology (2019).
+- Zhao, Y., & Zhang, X. (2019). Calculating spatial configurational entropy of a landscape mosaic based on the Wasserstein metric. Landscape Ecology, 34(8), 1849-1858. https://doi.org/10.1007/s10980-019-00876-x
 
 ## Contribution
 

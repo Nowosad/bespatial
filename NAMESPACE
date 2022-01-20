@@ -3,6 +3,7 @@
 export(bes_g_cushman)
 export(bes_g_gao)
 export(bes_m_cushman)
+export(bes_m_zhao)
 export(bes_p_cushman)
 importFrom(Rcpp,sourceCpp)
 useDynLib(bespatial, .registration = TRUE)
