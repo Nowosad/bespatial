@@ -40,11 +40,14 @@ bes_m_zhao_single = function(x, directions){
   # configuration
   rev_scale = (prod(res(x)) / 10000)
   areas = landscapemetrics::lsm_p_area(x, directions = directions)
-  # area()
-  # y = patches(x)
-  # z = cellSize(y,unit="ha") |> zonal(y, sum)
   areas$value_ncells = areas$value / rev_scale
   areas$freq = areas$value_ncells/sum(areas$value_ncells)
+  el2 = create_expanded_log(areas$value_ncells)
+    # y = patches(x)
+  # z = cellSize(y,unit="ha") |> zonal(y, sum)
+  # x_areas = terra::expanse(terra::disagg(terra::as.polygons(mosaic)), unit = "ha", transform = FALSE)
+  # x_areas = x_areas/sum(x_areas)
+  # x_areas / rev_scale
   el2 = create_expanded_log(areas$value_ncells)
   ws1 = wasserstein_metric(el2)
   ncell = sum(el2$w)
