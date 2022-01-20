@@ -4,10 +4,13 @@
 \alias{bes_m_zhao}
 \title{Zhao's entropy for landscape mosaics}
 \usage{
-bes_m_zhao(x, nr_of_permutations, independent = FALSE)
+bes_m_zhao(x, neighbourhood = 4)
 }
 \arguments{
 \item{x}{SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more categorical rasters}
+
+\item{neighbourhood}{The number of directions in which cell adjacencies are
+considered as neighbours: 4 (rook's case), 8 (queen's case)}
 }
 \value{
 A tibble
@@ -19,7 +22,7 @@ Calculates Zhao's entropy for landscape mosaics based on the Wasserstein metric 
 library(terra)
 library(bespatial)
 mosaic = rast(system.file("raster/mosaic.tif", package = "bespatial"))
-w_dists1 = bes_m_zhao(mosaic, 1000)
+w_dists1 = bes_m_zhao(mosaic)
 plot(mosaic, main = round(w_dists1$value, 2))
 }
 \references{

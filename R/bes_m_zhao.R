@@ -14,7 +14,7 @@
 #' library(terra)
 #' library(bespatial)
 #' mosaic = rast(system.file("raster/mosaic.tif", package = "bespatial"))
-#' w_dists1 = bes_m_zhao(mosaic, 1000)
+#' w_dists1 = bes_m_zhao(mosaic)
 #' plot(mosaic, main = round(w_dists1$value, 2))
 bes_m_zhao = function(x, neighbourhood = 4){
   if (!inherits(x, "SpatRaster")){
@@ -30,7 +30,7 @@ bes_m_zhao = function(x, neighbourhood = 4){
 
 bes_m_zhao_single = function(x, directions){
   # composition
-  h_data = as.data.frame(freq(x))
+  h_data = as.data.frame(terra::freq(x))
   h_data$freq = h_data$count/sum(h_data$count)
   el1 = create_expanded_log(h_data$count)
   wc1 = wasserstein_metric(el1)
@@ -38,17 +38,17 @@ bes_m_zhao_single = function(x, directions){
   yc = data.frame(v = 1:ncell, p = 1/ncell)
   wc2 = wasserstein_metric(yc)
   # configuration
-  rev_scale = (prod(res(x)) / 10000)
+  rev_scale = (prod(terra::res(x)) / 10000)
   areas = landscapemetrics::lsm_p_area(x, directions = directions)
   areas$value_ncells = areas$value / rev_scale
   areas$freq = areas$value_ncells/sum(areas$value_ncells)
   el2 = create_expanded_log(areas$value_ncells)
-    # y = patches(x)
+  # y = patches(x)
   # z = cellSize(y,unit="ha") |> zonal(y, sum)
   # x_areas = terra::expanse(terra::disagg(terra::as.polygons(mosaic)), unit = "ha", transform = FALSE)
   # x_areas = x_areas/sum(x_areas)
   # x_areas / rev_scale
-  el2 = create_expanded_log(areas$value_ncells)
+  # el2 = create_expanded_log(areas$value_ncells)
   ws1 = wasserstein_metric(el2)
   ncell = sum(el2$w)
   ys = data.frame(v = 1:ncell, p = 1/ncell)
