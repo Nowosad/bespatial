@@ -36,5 +36,7 @@ Imports:
 Suggests: 
     covr,
     testthat (>= 3.0.0)
+Remotes:
+    rspatial/terra
 Additional_repositories: https://rspatial.r-universe.dev
 Config/testthat/edition: 3
