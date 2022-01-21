@@ -17,7 +17,9 @@
   It includes metrics introduced by Cushman for landscape mosaics 
   (Cushman (2015) &lt;doi:10.1007/s10980-015-0305-2&gt;), 
   and landscape gradients and point patterns
-  (Cushman (2021) &lt;doi:10.3390/e23121616&gt;); by Gao et al. for landscape gradients
+  (Cushman (2021) &lt;doi:10.3390/e23121616&gt;); by Zhao and Zhang for 
+  landscape mosaics (&lt;doi:10.1007/s10980-019-00876-x&gt;);
+  and by Gao et al. for landscape gradients
   (&lt;doi:10.1111/tgis.12315&gt;; &lt;doi:10.1007/s10980-019-00854-3&gt;).">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -39,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">bespatial</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
       </span>
     </div>
 
@@ -66,7 +68,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of <strong>bespatial</strong> is to calculate several entropy metrics for spatial data inspired by Boltzmann’s entropy formula. It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015)), landscape gradients and point patterns (Cushman (2021)); by Gao et al. for landscape gradients (2017, 2019).</p>
+<p>The goal of <strong>bespatial</strong> is to calculate several entropy metrics for spatial data inspired by Boltzmann’s entropy formula. It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015)), landscape gradients and point patterns (Cushman (2021)); by Zhao and Zhang for andscape mosaics (2019); and by Gao et al. for landscape gradients (2017, 2019).</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -90,7 +92,7 @@
 <p>Now, we can calculate a selected metric, for example, Cushman’s configurational entropy for landscape mosaics with <code><a href="reference/bes_m_cushman.html">bes_m_cushman()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ce1</span> <span class="op">=</span> <span class="fu"><a href="reference/bes_m_cushman.html">bes_m_cushman</a></span><span class="op">(</span><span class="va">mosaic</span>, nr_of_permutations <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mosaic</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce1</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mosaic</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/math-generics.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce1</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
 <p>The above results show that the less random the configuration is, the smaller Cushman’s configurational entropy value is.</p>
 </div>
@@ -102,13 +104,13 @@
 <li>it starts with <code>bes_</code>
 </li>
 <li>next, it is either <code>m_</code> for mosaics (categorical rasters), <code>g_</code> for gradients (<code>g_</code>) (continuous rasters), or <code>p_</code> for point patterns (rasters with one value and NAs)</li>
-<li>it ends with the name of the author of the metric, for example, <code>cushman</code> or <code>gao</code>
+<li>it ends with the name of the main author of the metric, for example, <code>cushman</code>, <code>zhao</code>, or <code>gao</code>
 </li>
 </ul>
 <table class="table">
 <colgroup>
-<col width="22%">
-<col width="77%">
+<col width="16%">
+<col width="83%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">Function</th>
@@ -120,14 +122,18 @@
 <td align="left">Cushman’s configurational entropy for landscape mosaics (2015)</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="reference/bes_m_zhao.html">bes_m_zhao()</a></code></td>
+<td align="left">Zhao’s configurational entropy for landscape mosaics based on the Wasserstein metric (2019)</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="reference/bes_g_cushman.html">bes_g_cushman()</a></code></td>
 <td align="left">Cushman’s configurational entropy for surfaces (2021)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="reference/bes_g_gao.html">bes_g_gao()</a></code></td>
 <td align="left">Boltzmann entropy of a landscape gradient by Gao (2017, 2019)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="reference/bes_p_cushman.html">bes_p_cushman()</a></code></td>
 <td align="left">Cushman’s configurational entropy for point patterns (2021)</td>
 </tr>
@@ -147,6 +153,8 @@
 </li>
 <li>Gao, Peichao, Hong Zhang, and Zhilin Li. “A hierarchy-based solution to calculate the configurational entropy of landscape gradients.” Landscape Ecology 32(6) (2017): 1133-1146.</li>
 <li>Gao, Peichao and Zhilin Li. “Aggregation-based method for computing absolute Boltzmann entropy of landscape gradient with full thermodynamic consistency.” Landscape Ecology (2019).</li>
+<li>Zhao, Y., &amp; Zhang, X. (2019). Calculating spatial configurational entropy of a landscape mosaic based on the Wasserstein metric. Landscape Ecology, 34(8), 1849-1858. <a href="https://doi.org/10.1007/s10980-019-00876-x" class="external-link uri">https://doi.org/10.1007/s10980-019-00876-x</a>
+</li>
 </ul>
 </div>
 <div class="section level2">
@@ -201,7 +209,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
