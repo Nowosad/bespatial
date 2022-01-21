@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
   <!-- badges: end -->
 
 The goal of **bespatial** is to calculate several entropy metrics for spatial data inspired by Boltzmann's entropy formula.
-It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015)), landscape gradients and point patterns (Cushman (2021)); by Zhao and Zhang for  andscape mosaics (2019); and by Gao et al. for landscape gradients (2017, 2019).
+It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015)), landscape gradients and point patterns (Cushman (2021)); by Zhao and Zhang for landscape mosaics (2019); and by Gao et al. for landscape gradients (2017, 2019).
 
 ## Installation
 
@@ -34,9 +34,13 @@ It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015))
 
 You can install the development version from [GitHub](https://github.com/) with:
 
-``` r
-# install.packages("remotes")
-remotes::install_github("Nowosad/bespatial")
+<!-- ``` r -->
+<!-- # install.packages("remotes") -->
+<!-- remotes::install_github("Nowosad/bespatial") -->
+<!-- ``` -->
+
+```r
+install.packages("supercells", repos = "https://nowosad.r-universe.dev")
 ```
 
 ## Example
