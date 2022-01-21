@@ -31,7 +31,8 @@ Imports:
     Rcpp,
     terra,
     tibble,
-    landscapemetrics
+    landscapemetrics,
+    rgdal
 Suggests: 
     covr,
     testthat (>= 3.0.0)
