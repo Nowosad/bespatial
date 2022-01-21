@@ -29,11 +29,12 @@ Imports:
     belg,
     comat,
     Rcpp,
-    terra,
+    terra (>= 1.5-14),
     tibble,
     landscapemetrics,
     rgdal
 Suggests: 
     covr,
     testthat (>= 3.0.0)
+Additional_repositories: https://rspatial.r-universe.dev
 Config/testthat/edition: 3
