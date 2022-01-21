@@ -25,7 +25,13 @@
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/Nowosad/bespatial/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -35,7 +41,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Zhao's entropy for landscape mosaics</h1>
-    
+    <small class="dont-index">Source: <a href="https://github.com/Nowosad/bespatial/blob/HEAD/R/bes_m_zhao.R" class="external-link"><code>R/bes_m_zhao.R</code></a></small>
     <div class="hidden name"><code>bes_m_zhao.Rd</code></div>
     </div>
 
@@ -67,7 +73,7 @@ considered as neighbours: 4 (rook's case), 8 (queen's case)</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">bespatial</span><span class="op">)</span></span>
+<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Nowosad/bespatial" class="external-link">bespatial</a></span><span class="op">)</span></span>
 <span class="r-in"><span class="va">mosaic</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"raster/mosaic.tif"</span>, package <span class="op">=</span> <span class="st">"bespatial"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">w_dists1</span> <span class="op">=</span> <span class="fu">bes_m_zhao</span><span class="op">(</span><span class="va">mosaic</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mosaic</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/math-generics.html" class="external-link">round</a></span><span class="op">(</span><span class="va">w_dists1</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
