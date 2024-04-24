@@ -6,7 +6,15 @@
 \alias{bespatial-package}
 \title{bespatial: Boltzmann Entropy for Spatial Data}
 \description{
-Calculates several entropy metrics for spatial data inspired by Boltzmann's entropy formula. It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015) <doi:10.1007/s10980-015-0305-2>), and landscape gradients and point patterns (Cushman (2021) <doi:10.3390/e23121616>); by Zhao and Zhang for landscape mosaics (<doi:10.1007/s10980-019-00876-x>); and by Gao et al. for landscape gradients (<doi:10.1111/tgis.12315>; <doi:10.1007/s10980-019-00854-3>).
+Calculates several entropy metrics for spatial data inspired by Boltzmann's entropy formula. It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015) \doi{10.1007/s10980-015-0305-2}), and landscape gradients and point patterns (Cushman (2021) \doi{10.3390/e23121616}); by Zhao and Zhang for landscape mosaics (\doi{10.1007/s10980-019-00876-x}); and by Gao et al. for landscape gradients (\doi{10.1111/tgis.12315}; \doi{10.1007/s10980-019-00854-3}).
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/Nowosad/bespatial}
+  \item Report bugs at \url{https://github.com/Nowosad/bespatial/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Jakub Nowosad \email{nowosad.jakub@gmail.com} (\href{https://orcid.org/0000-0002-1057-3721}{ORCID})
