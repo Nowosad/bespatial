@@ -3,14 +3,13 @@
 
 # bespatial
 
-<!-- badges: start --> [![CRAN
+[![CRAN
 status](https://www.r-pkg.org/badges/version/bespatial)](https://CRAN.R-project.org/package=bespatial)
 [![R-CMD-check](https://github.com/Nowosad/bespatial/workflows/R-CMD-check/badge.svg)](https://github.com/Nowosad/bespatial/actions)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Codecov test
 coverage](https://codecov.io/gh/Nowosad/bespatial/branch/master/graph/badge.svg)](https://app.codecov.io/gh/Nowosad/bespatial?branch=master)
-<!-- badges: end -->
 
 The goal of **bespatial** is to calculate several entropy metrics for
 spatial data inspired by Boltzmann’s entropy formula. It includes
