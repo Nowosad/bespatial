@@ -4,7 +4,7 @@
 \alias{bes_g_cushman}
 \title{Configurational entropy for surfaces}
 \usage{
-bes_g_cushman(x, nr_of_permutations, independent = FALSE)
+bes_g_cushman(x, nr_of_permutations = 1000, independent = FALSE)
 }
 \arguments{
 \item{x}{SpatRaster, stars, RasterLayer, RasterStack, RasterBrick, matrix, or array containing one or more continuous rasters}
@@ -23,12 +23,12 @@ A tibble
 Calculates Cushman's configurational entropy for surfaces (2021)
 }
 \examples{
-library(terra)
 library(bespatial)
-gradient = rast(system.file("raster/gradient.tif", package = "bespatial"))
-ce2 = bes_g_cushman(gradient, 1000)
-plot(gradient, main = round(ce2$value, 2))
-bes_g_cushman(gradient, 1000, independent = TRUE)
+gradient = terra::rast(system.file("raster/gradient.tif", package = "bespatial"),
+                       lyrs = 1)
+ce2 = bes_g_cushman(gradient, 100)
+# plot(gradient, main = round(ce2$value, 2))
+# bes_g_cushman(gradient, 1000, independent = TRUE)
 }
 \references{
 Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23, Issue 12, p. 1616). MDPI AG. https://doi.org/10.3390/e23121616

@@ -11,7 +11,7 @@ Calculates several entropy metrics for spatial data inspired by Boltzmann's entr
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/Nowosad/bespatial}
+  \item \url{https://jakubnowosad.com/bespatial}
   \item Report bugs at \url{https://github.com/Nowosad/bespatial/issues}
 }
 
