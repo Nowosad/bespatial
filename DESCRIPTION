@@ -1,6 +1,6 @@
 Package: bespatial
 Title: Boltzmann Entropy for Spatial Data
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person(given = "Jakub", family = "Nowosad", 
     role = c("aut", "cre"),
@@ -12,9 +12,9 @@ Description: Calculates several entropy metrics for spatial data
   (Cushman (2015) <doi:10.1007/s10980-015-0305-2>), 
   and landscape gradients and point patterns
   (Cushman (2021) <doi:10.3390/e23121616>); by Zhao and Zhang for 
-  landscape mosaics (<doi:10.1007/s10980-019-00876-x>);
+  landscape mosaics (Zhao and Zhang (2019) <doi:10.1007/s10980-019-00876-x>);
   and by Gao et al. for landscape gradients
-  (<doi:10.1111/tgis.12315>; <doi:10.1007/s10980-019-00854-3>).
+  (Gao et al. (2018) <doi:10.1111/tgis.12315>; Gao and Li (2019) <doi:10.1007/s10980-019-00854-3>).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

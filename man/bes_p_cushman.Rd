@@ -23,13 +23,15 @@ A tibble
 Calculates Cushman's configurational entropy for point patterns (2021)
 }
 \examples{
-library(terra)
-library(bespatial)
-point_pattern = rast(system.file("raster/point_pattern.tif", package = "bespatial"))
-ce3 = bes_p_cushman(point_pattern, 100)
-plot(point_pattern, main = round(ce3$value, 2))
-#ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)
-#plot(point_pattern, main = round(ce3b$value, 2))
+\donttest{
+  library(terra)
+  library(bespatial)
+  point_pattern = rast(system.file("raster/point_pattern.tif", package = "bespatial"))
+  ce3 = bes_p_cushman(point_pattern, 100)
+  plot(point_pattern, main = round(ce3$value, 2))
+  ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)
+  plot(point_pattern, main = round(ce3b$value, 2))
+}
 }
 \references{
 Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23, Issue 12, p. 1616). MDPI AG. https://doi.org/10.3390/e23121616

@@ -15,12 +15,15 @@
 #' @references Cushman, S. A. (2021). Generalizing Boltzmann Configurational Entropy to Surfaces, Point Patterns and Landscape Mosaics. In Entropy (Vol. 23, Issue 12, p. 1616). MDPI AG. https://doi.org/10.3390/e23121616 
 #'
 #' @examples
-#' library(bespatial)
-#' gradient = terra::rast(system.file("raster/gradient.tif", package = "bespatial"),
+#' \donttest{
+#'   library(bespatial)
+#'   library(terra)
+#'   gradient = rast(system.file("raster/gradient.tif", package = "bespatial"),
 #'                        lyrs = 1)
-#' ce2 = bes_g_cushman(gradient, 100)
-#' # plot(gradient, main = round(ce2$value, 2))
-#' # bes_g_cushman(gradient, 1000, independent = TRUE)
+#'   ce2 = bes_g_cushman(gradient, 100)
+#'   plot(gradient, main = round(ce2$value, 2))
+#'   bes_g_cushman(gradient, 1000, independent = TRUE)
+#' }
 bes_g_cushman = function(x, nr_of_permutations = 1000, independent = FALSE){
   if (!inherits(x, "SpatRaster")){
     x = to_terra(x)
