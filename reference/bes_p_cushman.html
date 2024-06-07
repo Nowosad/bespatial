@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bespatial</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
       </span>
     </div>
 
@@ -83,14 +83,17 @@ Use <code>FALSE</code> (default) when each of your input rasters has the same co
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jakubnowosad.com/bespatial/" class="external-link">bespatial</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">point_pattern</span> <span class="op">=</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"raster/point_pattern.tif"</span>, package <span class="op">=</span> <span class="st">"bespatial"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">ce3</span> <span class="op">=</span> <span class="fu">bes_p_cushman</span><span class="op">(</span><span class="va">point_pattern</span>, <span class="fl">100</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">point_pattern</span>, main <span class="op">=</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/math-generics.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce3</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jakubnowosad.com/bespatial/" class="external-link">bespatial</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">point_pattern</span> <span class="op">=</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"raster/point_pattern.tif"</span>, package <span class="op">=</span> <span class="st">"bespatial"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">ce3</span> <span class="op">=</span> <span class="fu">bes_p_cushman</span><span class="op">(</span><span class="va">point_pattern</span>, <span class="fl">100</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">point_pattern</span>, main <span class="op">=</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/math-generics.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce3</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="bes_p_cushman-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span><span class="co">#ce3b = bes_p_cushman(point_pattern, 100, independent = TRUE)</span></span></span>
-<span class="r-in"><span><span class="co">#plot(point_pattern, main = round(ce3b$value, 2))</span></span></span>
+<span class="r-in"><span>  <span class="va">ce3b</span> <span class="op">=</span> <span class="fu">bes_p_cushman</span><span class="op">(</span><span class="va">point_pattern</span>, <span class="fl">100</span>, independent <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">point_pattern</span>, main <span class="op">=</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/math-generics.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ce3b</span><span class="op">$</span><span class="va">value</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="bes_p_cushman-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
