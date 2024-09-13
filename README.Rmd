@@ -26,11 +26,11 @@ It includes metrics introduced by Cushman for landscape mosaics (Cushman (2015))
 
 ## Installation
 
-<!-- You can install the released version of bespatial from [CRAN](https://CRAN.R-project.org) with: -->
+You can install the released version of **bespatial** from [CRAN](https://CRAN.R-project.org) with:
 
-<!-- ``` r -->
-<!-- install.packages("bespatial") -->
-<!-- ``` -->
+```r
+install.packages("bespatial")
+```
 
 You can install the development version from [GitHub](https://github.com/) with:
 
@@ -40,7 +40,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 <!-- ``` -->
 
 ```r
-install.packages("supercells", repos = "https://nowosad.r-universe.dev")
+install.packages("bespatial", repos = "https://nowosad.r-universe.dev")
 ```
 
 ## Example

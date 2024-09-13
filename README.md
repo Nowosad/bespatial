@@ -20,10 +20,12 @@ gradients (2017, 2019).
 
 ## Installation
 
-<!-- You can install the released version of bespatial from [CRAN](https://CRAN.R-project.org) with: -->
-<!-- ``` r -->
-<!-- install.packages("bespatial") -->
-<!-- ``` -->
+You can install the released version of **bespatial** from
+[CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("bespatial")
+```
 
 You can install the development version from
 [GitHub](https://github.com/) with:
@@ -34,7 +36,7 @@ You can install the development version from
 <!-- ``` -->
 
 ``` r
-install.packages("supercells", repos = "https://nowosad.r-universe.dev")
+install.packages("bespatial", repos = "https://nowosad.r-universe.dev")
 ```
 
 ## Example
