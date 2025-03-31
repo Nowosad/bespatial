@@ -9,5 +9,5 @@
 #' @return An average distance between points
 get_distance = function(p, x){
   new_r = terra::as.points(terra::rast(x, vals = p, nlyr = 1))
-  mean(as.vector(terra::distance(new_r)))
+  mean(as.vector(terra::distance(new_r, method="geo")))
 }
