@@ -1,6 +1,6 @@
 Package: bespatial
 Title: Boltzmann Entropy for Spatial Data
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: c(
     person(given = "Jakub", family = "Nowosad", 
     role = c("aut", "cre"),
@@ -18,7 +18,7 @@ Description: Calculates several entropy metrics for spatial data
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.1)
 LinkingTo: 
